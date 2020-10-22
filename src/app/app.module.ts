@@ -11,6 +11,7 @@ import { SliderComponent } from './components/slides/slider/slider.component';
 
 import { HttpClientModule } from '@angular/common/http'
 import { Routes, RouterModule } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -27,12 +28,14 @@ const appRoutes: Routes = [
     HomeComponent,
     AboutComponent,
     FormComponent,
-    SliderComponent
+    SliderComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
