@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { FormComponent } from './components/slides/form/form.component';
 import { SliderComponent } from './components/slides/slider/slider.component';
+import { PlanningComponent } from './components/planning/planning.component';
 
 
 import { HttpClientModule } from '@angular/common/http'
@@ -16,6 +17,7 @@ import { HeaderComponent } from './components/header/header.component';
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'planning', component: PlanningComponent },
   { path: 'slider/form', component: FormComponent },
   { path: 'slider/slide', component: SliderComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     AboutComponent,
     FormComponent,
     SliderComponent,
-    HeaderComponent
+    HeaderComponent,
+    PlanningComponent
   ],
   imports: [
     BrowserModule,
