@@ -8,6 +8,7 @@ import { VoiceCaptureService } from 'src/app/services/voice-capture.service';
   styleUrls: ['./voice-capture.component.css']
 })
 export class VoiceCaptureComponent implements OnDestroy {
+  //record
   isRecording = false;
   recordedTime;
   blobUrl;
@@ -89,5 +90,7 @@ export class VoiceCaptureComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.abortRecording();
   }
+
+  //transcription
 
 }
