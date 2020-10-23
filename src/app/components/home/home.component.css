@@ -22,10 +22,10 @@ h1{
     transform: translateX(-50%);
 }
 .btn{
-    top: 50%;
-    position: absolute;
+    position: relative;
+    margin-top: 30px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     font-size: 30px;
     background: orange;
     color: white;

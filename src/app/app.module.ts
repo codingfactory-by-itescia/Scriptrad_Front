@@ -13,6 +13,7 @@ import { PlanningComponent } from './components/planning/planning.component';
 import { HttpClientModule } from '@angular/common/http'
 import { Routes, RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
+import { CarouselComponent } from './components/slides/form/carousel/carousel.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     FormComponent,
     SliderComponent,
     HeaderComponent,
-    PlanningComponent
+    PlanningComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

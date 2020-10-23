@@ -1,0 +1,8 @@
+<input class="" type="file" id="file" accept="image/*" multiple (change)="handleFileInput($event)">
+<button class="btn btn-default">Ajouter des images</button>
+<button class="btn btn-default" (click)="deleteProject()">Supprimer projet</button>
+<div class="carousel_container">
+    <ul class="carousel_list">
+        <li class="carousel_el" *ngFor="let img of img_list"><img [src]="img"></li>
+    </ul>
+</div>
