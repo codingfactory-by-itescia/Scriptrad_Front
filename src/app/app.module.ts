@@ -13,11 +13,13 @@ import { PlanningComponent } from './components/planning/planning.component';
 import { HttpClientModule } from '@angular/common/http'
 import { Routes, RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
+import { VoiceCaptureComponent } from './components/voice-capture/voice-capture.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'planning', component: PlanningComponent },
+  { path: 'voice-capture', component: VoiceCaptureComponent },
   { path: 'slider/form', component: FormComponent },
   { path: 'slider/slide', component: SliderComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -32,7 +34,8 @@ const appRoutes: Routes = [
     FormComponent,
     SliderComponent,
     HeaderComponent,
-    PlanningComponent
+    PlanningComponent,
+    VoiceCaptureComponent
   ],
   imports: [
     BrowserModule,
