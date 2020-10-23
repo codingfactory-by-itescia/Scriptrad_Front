@@ -1,18 +1,15 @@
-<p>voice-capture works!</p>
-<input type="button" value="Test" onClick="console.log('aabc')"/>
-<input type="button" value="Capturer son" onClick="recognition.start()"/>
-
-<input type="button" value="Arrêter capture" onClick="recognition.stop()"/>
-
-
+<h1>Bienvenue dans le menu de capture de voix.</h1>
 <div>
-  <button class="start-button" *ngIf="!isRecording && !blobUrl" (click)="startRecording()">Start Recording</button>
-  <button class="stop-button" *ngIf="isRecording && !blobUrl" (click)="stopRecording()">Stop Recording</button>
-  <button class="cancel-button" *ngIf="!isRecording && blobUrl" (click)="clearRecordedData()">Clear Recording</button>
+  <button class="start-button buttons-of-capture-page" *ngIf="!isRecording && !blobUrl" (click)="startRecording()">Nouvel enregistrement</button>
+  <button class="stop-button buttons-of-capture-page" *ngIf="isRecording && !blobUrl" (click)="stopRecording()">Terminer l'enregistrement</button>
+  <button class="cancel-button buttons-of-capture-page" *ngIf="!isRecording && blobUrl" (click)="clearRecordedData()">Supprimer l'enregistrement</button>
   <div *ngIf="isRecording && !blobUrl"> {{recordedTime}} </div>
   <div>
-  <audio *ngIf="!isRecording && blobUrl"  controls>
-    <source [src]="blobUrl" type="audio/webm">
-  </audio>
+    <audio *ngIf="!isRecording && blobUrl"  controls>
+      <source [src]="blobUrl" type="audio/webm">
+    </audio>
   </div>
+  <button class="save-button buttons-of-capture-page" *ngIf="!isRecording && blobUrl" (click)="saveVoiceCapture()">Télécharger</button>
+  <h2>Résultat de transcription</h2>
+  <p>{{textFromVoice}}</p>
 </div>
