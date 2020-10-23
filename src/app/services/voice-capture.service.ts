@@ -2,7 +2,6 @@ import { Injectable, NgZone } from '@angular/core';
 import * as RecordRTC from 'recordrtc';
 import * as moment from 'moment';
 import { Observable, Subject } from 'rxjs';
-import { isNullOrUndefined } from 'util';
 
 interface RecordedAudioOutput {
   blob: Blob;
@@ -18,6 +17,7 @@ export class VoiceCaptureService {
   private _recorded = new Subject<RecordedAudioOutput>();
   private _recordingTime = new Subject<string>();
   private _recordingFailed = new Subject<string>();
+
   getRecordedBlob(): Observable<RecordedAudioOutput> {
     return this._recorded.asObservable();
   }

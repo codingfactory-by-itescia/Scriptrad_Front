@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { Routes, RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { VoiceCaptureComponent } from './components/voice-capture/voice-capture.component';
+import { VoiceCaptureService } from './services/voice-capture.service';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -43,7 +44,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [VoiceCaptureService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,16 +8,6 @@ import { VoiceCaptureService } from 'src/app/services/voice-capture.service';
   styleUrls: ['./voice-capture.component.css']
 })
 export class VoiceCaptureComponent implements OnDestroy {
-
-
-    // showSearchButton: boolean;
-    // speechData: string;
-
-    // constructor(private speechRecognitionService: VoiceCaptureService) {
-    //     this.showSearchButton = true;
-    //     this.speechData = "";
-    // }
-
   isRecording = false;
   recordedTime;
   blobUrl;
