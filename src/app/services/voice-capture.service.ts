@@ -30,7 +30,6 @@ export class VoiceCaptureService {
     return this._recordingFailed.asObservable();
   }
 
-
   startRecording() {
 
     if (this.recorder) {
