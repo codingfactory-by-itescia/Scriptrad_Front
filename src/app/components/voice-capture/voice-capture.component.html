@@ -10,6 +10,7 @@
     </audio>
   </div>
   <button class="save-button buttons-of-capture-page" *ngIf="!isRecording && blobUrl" (click)="saveVoiceCapture()">Télécharger</button>
+
   <h2>Résultat de transcription</h2>
   <p>{{textFromVoice}}</p>
 </div>
