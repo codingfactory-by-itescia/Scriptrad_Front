@@ -16,7 +16,6 @@ export class VoiceCaptureComponent implements OnDestroy {
 
   unsafeString:string = "unsafe:";
   textFromVoice:string = "Ce texte s'adaptera à ce qui a été dit.";
-  captureLink;//safe link
   voiceCaptureBlob;
 
 
@@ -39,14 +38,7 @@ export class VoiceCaptureComponent implements OnDestroy {
 
     this.audioRecordingService.getRecordedBlob().subscribe((data) => {
       this.blobUrl = this.sanitizer.bypassSecurityTrustUrl(URL.createObjectURL(data.blob));
-      //this.captureLink = this.sanitizer.sanitize;
       this.voiceCaptureBlob = data.blob;
-
-      //this.captureLink = "blob:"+
-      // if (this.captureLink.includes(this.unsafeString)) {
-      //   this.captureLink = this.captureLink.substring(this.unsafeString.length);
-      // }
-      // console.log(this.blobUrl.changingThisBreaksApplicationSecurity);
     });
   }
   saveVoiceCapture(){
@@ -90,7 +82,4 @@ export class VoiceCaptureComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.abortRecording();
   }
-
-  //transcription
-
 }
