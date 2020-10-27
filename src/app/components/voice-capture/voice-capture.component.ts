@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { VoiceCaptureService } from 'src/app/services/voice-capture.service';
+import {ApiManagerServiceService} from 'src/app/services/api-manager-service.service';
 
 @Component({
   selector: 'app-voice-capture',
@@ -19,7 +20,7 @@ export class VoiceCaptureComponent implements OnDestroy {
   voiceCaptureBlob;
 
 
-  constructor(private audioRecordingService: VoiceCaptureService, private sanitizer: DomSanitizer) {
+  constructor(private audioRecordingService: VoiceCaptureService, private sanitizer: DomSanitizer, private apiManager : ApiManagerServiceService) {
 
     this.audioRecordingService.recordingFailed().subscribe(() => {
       this.isRecording = false;
@@ -42,6 +43,7 @@ export class VoiceCaptureComponent implements OnDestroy {
     });
   }
   saveVoiceCapture(){
+    console.log(this.voiceCaptureBlob);
     var url= window.URL.createObjectURL(this.voiceCaptureBlob);
     window.open(url);
   }
@@ -72,6 +74,7 @@ export class VoiceCaptureComponent implements OnDestroy {
       this.isRecording = false;
       this.textFromVoice = "**Résultat transcrit**";
 
+
     }
   }
 
@@ -79,6 +82,43 @@ export class VoiceCaptureComponent implements OnDestroy {
     this.blobUrl = null;
   }
 
+  //cette méthode contient plusieurs tentatives de post que je n'ai pas réussi à faire lancer
+  sendSoundCapture() {
+    // const selectedFileList = (<HTMLInputElement>document.getElementById('myCapture')).files;
+
+    // const file = selectedFileList.item(0);
+    // const formData = new FormData();
+    // formData.append("file", file);
+    // console.log(file);
+    // this.apiManager.postSoundCapture(file).subscribe(event => {
+    //   console.log(event);
+    // });
+
+    // this.apiManager.postSoundCapture().subscribe((data)=>{
+    //   console.log(data);
+    // });
+  }
+
+  upload(files: File) {
+    const formData = new FormData();
+    const file = files[0];
+    formData.append("file", file);
+    //pour le moment ça fonctionne avec une méthode get mais dans l'idée, on le remplacera par un post
+    this.apiManager.sendFileByGet(file.name).subscribe((data)=>{
+      console.log(data);
+    });
+  }
+
+  ngOnInit() : void {
+    this.apiManager.getNews().subscribe((data)=>{
+      console.log(data);
+    });
+
+    this.apiManager.testPost().subscribe((data)=>{
+      console.log(data);
+    });
+
+  }
   ngOnDestroy(): void {
     this.abortRecording();
   }

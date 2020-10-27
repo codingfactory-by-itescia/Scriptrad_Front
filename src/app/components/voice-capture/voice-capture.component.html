@@ -11,6 +11,9 @@
   </div>
   <button class="save-button buttons-of-capture-page" *ngIf="!isRecording && blobUrl" (click)="saveVoiceCapture()">Télécharger</button>
 
+  <input type='file' id="myCapture" class="save-button buttons-of-capture-page" (change)="upload($event.target.files)" value="Envoyer un fichier audio à analyser">
+  <button class="save-button buttons-of-capture-page" (click)="sendSoundCapture()">Envoyer</button>
+
   <h2>Résultat de transcription</h2>
   <p>{{textFromVoice}}</p>
 </div>
