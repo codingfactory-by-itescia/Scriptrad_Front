@@ -1,1 +1,17 @@
-<p>slider works!</p>
+<div class="container">
+    <h1>Votre projet</h1>
+    <div class="btn_container">
+        <button class="btn btn-default btn_leave" (click)="Leave()">QUITTER</button>
+        <button class="btn btn-default btn_end" (click)="End()">FIN</button>
+    </div>
+    <button class="btn btn-default btn_left" (click)="previousSlide()" [disabled]="actualIndex === 0"></button>
+    <button class="btn btn-default btn_right" (click)="nextSlide()" [disabled]="actualIndex + 1 === sliderimg_list.length"></button>
+    <div class="slider_view">
+        <img class="img_selected" [src]="imgSelected">
+    </div>
+    <div class="carousel_container">
+        <ul class="carousel_list">
+            <li class="carousel_el" [ngClass]="{selected: actualIndex === i}" *ngFor="let img of sliderimg_list, let i = index"><img  [src]="img"></li>
+        </ul>
+    </div>
+</div>

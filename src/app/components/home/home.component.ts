@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   }
 
   Start(): void{
-    this.router.navigate(['/slider', 'form']);
+    this.router.navigate(['/form']);
   }
 
 }

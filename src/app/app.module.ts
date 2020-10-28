@@ -19,8 +19,8 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'planning', component: PlanningComponent },
-  { path: 'slider/form', component: FormComponent },
-  { path: 'slider/slide', component: SliderComponent },
+  { path: 'form', component: FormComponent },
+  { path: 'slider', component: SliderComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home' }
 ];

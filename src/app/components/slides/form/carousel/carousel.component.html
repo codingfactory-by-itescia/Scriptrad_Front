@@ -6,3 +6,4 @@
         <li class="carousel_el" *ngFor="let img of img_list"><img [src]="img"></li>
     </ul>
 </div>
+<button class="btn btn-default btn_begin" (click)="navigateToSlider()" [disabled]="img_list.length === 0">Lancer le projet</button>
