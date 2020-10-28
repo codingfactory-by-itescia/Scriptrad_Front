@@ -87,9 +87,10 @@ export class VoiceCaptureComponent implements OnDestroy {
     const file = files[0];
     formData.append("file", file);
 
-    this.apiManager.transcript(file.name).subscribe((dataTranscripted)=>{
+    this.apiManager.transcript(file.name).subscribe((dataTranscripted: any)=>{
       console.log(dataTranscripted);
-      this.textFromVoice = dataTranscripted as string;
+      let result = JSON.parse(dataTranscripted)
+      this.textFromVoice = result.alternatives[0].transcript;
       //la suite, ce sera sur le même modèle pour la traduction
       // this.apiManager.transcript(file.name).subscribe((dataTranscripted)=>{
       //   console.log(dataTranscripted);
