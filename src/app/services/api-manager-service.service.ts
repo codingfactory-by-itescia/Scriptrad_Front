@@ -11,6 +11,7 @@ export class ApiManagerServiceService {
   API_URL = "http://127.0.0.1:8000";
   constructor(private httpClient: HttpClient) {}
 
+  //needed to send json objects
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -23,46 +24,8 @@ export class ApiManagerServiceService {
     return this.httpClient.get(this.API_URL+'/sendAudioByGet/'+file);
   }
 
-  //envoyer en paramètre le chemin du fichier audio comme ça on pourra le trouver et le lire en python
-  public postSoundCapture(file: any) {
-    console.log("file name : ",file);
-
-    return this.httpClient.get(this.API_URL+'/test');
-    // return this.httpClient.post(this.API_URL+'/insertData', { name: file }).subscribe(data => {
-    //   console.log(data);
-    // });
-
-    // return this.httpClient.post<any>(this.API_URL+'/insertData', file, this.httpOptions).subscribe(data => {
-    //   console.log(data);
-    // });
-
-
-    // this.httpClient.post(this.API_URL+'/translate', file).subscribe(data => {
-    //   console.log(file,data);
-    //     console.log("ça marche pour le fichier upload",data);
-    // });
-   // return this.httpClient.post();
-   //console.log("Lien vers le son capturé :", url);
+  public transcript(file){
+    return this.httpClient.post(this.API_URL+'/transcript', {"file" : file}, this.httpOptions);
   }
-
-  testPost() {
-    const fileName = "test";
-    return this.httpClient.get(this.API_URL+'/items/'+fileName);
-
-    // this.httpClient.get(this.API_URL+"/items/"+fileName).subscribe(() => {
-    //   console.log("test");
-    // });
-
-    // this.httpClient.post<any>('https://jsonplaceholder.typicode.com/posts', "abc").subscribe(data => {
-    //     console.log(data);
-    // });
-    // this.httpClient.post<any>(this.API_URL+'/translate', { translate: 'Angular POST Request Example' }).subscribe(data => {
-    //   console.log(data);
-    // });
-    // this.httpClient.post<any>(this.API_URL+'/insertData',  "{ name : 'Angular POST Request Example' }" ).subscribe(data => {
-    //   console.log(data);
-    // });
-  }
-
 
 }

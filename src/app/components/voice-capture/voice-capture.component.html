@@ -1,5 +1,7 @@
-<h1>Bienvenue dans le menu de capture de voix.</h1>
-<div>
+<div style="text-align: center;">
+  <h1>Bienvenue dans le menu de capture de voix.</h1>
+  <h2>Préparation</h2>
+  <h3>Enregistrer la voix</h3>
   <button class="start-button buttons-of-capture-page" *ngIf="!isRecording && !blobUrl" (click)="startRecording()">Nouvel enregistrement</button>
   <button class="stop-button buttons-of-capture-page" *ngIf="isRecording && !blobUrl" (click)="stopRecording()">Terminer l'enregistrement</button>
   <button class="cancel-button buttons-of-capture-page" *ngIf="!isRecording && blobUrl" (click)="clearRecordedData()">Supprimer l'enregistrement</button>
@@ -10,10 +12,15 @@
     </audio>
   </div>
   <button class="save-button buttons-of-capture-page" *ngIf="!isRecording && blobUrl" (click)="saveVoiceCapture()">Télécharger</button>
-
+  <h3>Envoyer un fichier audio</h3>
   <input type='file' id="myCapture" class="save-button buttons-of-capture-page" (change)="upload($event.target.files)" value="Envoyer un fichier audio à analyser">
-  <button class="save-button buttons-of-capture-page" (click)="sendSoundCapture()">Envoyer</button>
+  <h2>Lecture</h2>
 
-  <h2>Résultat de transcription</h2>
+  <h3>Transcription</h3>
   <p>{{textFromVoice}}</p>
+  <h3>Traduction</h3>
+  <p>{{textFromVoiceTraduced}}</p>
+  <h3>Résumé</h3>
+  <p>{{textFromVoiceSummarized}}</p>
+  <h2></h2>
 </div>
