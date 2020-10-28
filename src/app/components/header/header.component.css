@@ -1,0 +1,9 @@
+.home_nav_title{
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+    float: initial;
+    transform: translate(-50%,-50%);
+    color: rgba(2,0,36,1);
+}

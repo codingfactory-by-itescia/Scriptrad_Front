@@ -13,16 +13,25 @@ import { PlanningComponent } from './components/planning/planning.component';
 import { HttpClientModule } from '@angular/common/http'
 import { Routes, RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
+<<<<<<< HEAD
 import { VoiceCaptureComponent } from './components/voice-capture/voice-capture.component';
 import { VoiceCaptureService } from './services/voice-capture.service';
+=======
+import { CarouselComponent } from './components/slides/form/carousel/carousel.component';
+>>>>>>> slider
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'planning', component: PlanningComponent },
+<<<<<<< HEAD
   { path: 'voice-capture', component: VoiceCaptureComponent },
   { path: 'slider/form', component: FormComponent },
   { path: 'slider/slide', component: SliderComponent },
+=======
+  { path: 'form', component: FormComponent },
+  { path: 'slider', component: SliderComponent },
+>>>>>>> slider
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home' }
 ];
@@ -36,7 +45,11 @@ const appRoutes: Routes = [
     SliderComponent,
     HeaderComponent,
     PlanningComponent,
+<<<<<<< HEAD
     VoiceCaptureComponent
+=======
+    CarouselComponent
+>>>>>>> slider
   ],
   imports: [
     BrowserModule,
