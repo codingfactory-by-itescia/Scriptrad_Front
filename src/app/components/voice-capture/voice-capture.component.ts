@@ -91,7 +91,11 @@ export class VoiceCaptureComponent implements OnDestroy {
       console.log(dataTranscripted);
       let result = JSON.parse(dataTranscripted)
       this.textFromVoice = result.alternatives[0].transcript;
-      //la suite, ce sera sur le même modèle pour la traduction
+      //la suite, ce sera sur le même modèle pour le résumé
+      // this.apiManager.summarize(this.textFromVoice).subscribe((dataSummarized)=>{
+      //   console.log(dataSummarized);
+      //   // this.textFromVoiceSummarized = dataTranscripted as string;
+      // });
       // this.apiManager.transcript(file.name).subscribe((dataTranscripted)=>{
       //   console.log(dataTranscripted);
       //   this.textFromVoice = dataTranscripted as string;
@@ -109,6 +113,11 @@ export class VoiceCaptureComponent implements OnDestroy {
     //   console.log(data);
     //   this.textFromVoice = data as string;
     // });
+    const textTest = "test de micro Transcript: alors ceci est un enregistrement pour tester la pays de Google et afin de savoir si la transcription est fonctionnelle il y a en ce moment même Imed qui est derrière moi ceci afin de observer si le programme est belle et bien fonctionnel comme je l'ai dit précédemment";
+    this.apiManager.summarize(textTest).subscribe((dataSummarized)=>{
+      console.log(dataSummarized);
+      // this.textFromVoiceSummarized = dataTranscripted as string;
+    });
   }
   ngOnDestroy(): void {
     this.abortRecording();

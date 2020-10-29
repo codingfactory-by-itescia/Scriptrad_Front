@@ -28,4 +28,8 @@ export class ApiManagerServiceService {
     return this.httpClient.post(this.API_URL+'/transcript', {"file" : file}, this.httpOptions);
   }
 
+  public summarize(text) {
+    return this.httpClient.post(this.API_URL+'/summarize', {"text" : text}, this.httpOptions);
+  }
+
 }
