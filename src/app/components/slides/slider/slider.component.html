@@ -11,7 +11,7 @@
     </div>
     <div class="carousel_container">
         <ul class="carousel_list">
-            <li class="carousel_el" [ngClass]="{selected: actualIndex === i}" *ngFor="let img of sliderimg_list, let i = index"><img  [src]="img"></li>
+            <li (click)="navigateTo($event.target, img)" class="carousel_el" [ngClass]="{selected: actualIndex === i}" *ngFor="let img of sliderimg_list, let i = index"><img class="img_carousel" [src]="img"></li>
         </ul>
     </div>
 </div>
