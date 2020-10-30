@@ -20,17 +20,38 @@ export class SliderComponent implements OnInit {
   }
   nextSlide() {
     this.actualIndex++;
-    this.imgSelected = this.sliderimg_list[this.actualIndex];
+    this.changeImgSelected();
+    this.animate();
   }
 
   previousSlide() {
     this.actualIndex--;
-    this.imgSelected = this.sliderimg_list[this.actualIndex];
+    this.changeImgSelected();
+    this.animate();
   }
+
+  animate(){
+    let el_list = document.getElementsByClassName('img_carousel') as HTMLCollectionOf<HTMLImageElement> ;
+    let arry = Array.from(el_list)
+    var el_img = arry.find(el => el.currentSrc === this.imgSelected)  
+    el_img.scrollIntoView({ behavior: "smooth", block: "start", inline: "center"})
+
+  }
+
   Leave(){
     this.router.navigate(['/form']);
   }
   End(){
     console.log('end')
+  }
+
+  changeImgSelected(){
+    this.imgSelected = this.sliderimg_list[this.actualIndex];
+  }
+
+  navigateTo(el, img){
+    this.actualIndex = this.sliderimg_list.indexOf(img)
+    this.changeImgSelected();
+    el.scrollIntoView({ behavior: "smooth", block: "start", inline: "center"})
   }
 }
