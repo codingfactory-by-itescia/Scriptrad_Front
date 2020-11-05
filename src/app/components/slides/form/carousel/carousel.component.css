@@ -1,9 +1,12 @@
 .carousel_container{
     border: 1px solid rgb(150, 128, 128);
-    background-color: rgb(236, 222, 222);
-    height: 200px;
+    background: white;
+    height: 300px;
     width: 100%;
     overflow: hidden;
+    position: relative;
+    top: 20px;
+    border-radius: 20px;
 }
 .carousel_list{
     list-style-type: none;
@@ -21,6 +24,7 @@ input{
     position: absolute;
     width: 145px;
     height: 35px;
+    right: 87px;
 }
 input[type=file], /* FF, IE7+, chrome (except button) */
 input[type=file]::-webkit-file-upload-button { /* chromes and blink button */
@@ -28,7 +32,7 @@ input[type=file]::-webkit-file-upload-button { /* chromes and blink button */
 }
 .carousel_el{
     height: 100%;
-    width: 200px;
+    width: 350px;
     margin-right: 20px;
     display: inline-block;
     position: relative;
@@ -37,7 +41,7 @@ input[type=file]::-webkit-file-upload-button { /* chromes and blink button */
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #27a3d7;
+    border: 1px solid black;
 }
 .carousel_el >img {
     height: 100%;
@@ -57,8 +61,27 @@ input[type=file]::-webkit-file-upload-button { /* chromes and blink button */
   .carousel_list::-webkit-scrollbar-corner {
     background: transparent;
   }
+  
+/* Buttons */
+::-webkit-scrollbar-button:single-button {
+    background-color: #bbbbbb;
+    display: block;
+    border-style: solid;
+    height: 13px;
+    width: 16px;
+  }
   .btn_begin{
-      margin-top: 20px;
+      margin-top: 50px;
       position: relative;
       float: right;
+  }
+  .btn{
+      background-color: unset;
+      color: white;
+      border: white solid 2px;
+      float: right;
+      border-radius: 20px;
+  }
+  .btn_delete{
+    margin-right: 10px;
   }
