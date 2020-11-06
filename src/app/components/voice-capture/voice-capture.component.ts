@@ -89,7 +89,7 @@ export class VoiceCaptureComponent implements OnDestroy {
     this.apiManager.transcript(file.name).subscribe((dataTranscripted: any)=>{
       console.log(dataTranscripted);
       let result = JSON.parse(dataTranscripted)
-      this.textFromVoice = result.alternatives[0].transcript;
+      this.textFromVoice = result.message;
       
       this.apiManager.summarize(this.textFromVoice).subscribe((dataSummarized)=>{
         console.log(dataSummarized);
