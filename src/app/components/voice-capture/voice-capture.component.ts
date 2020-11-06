@@ -85,7 +85,7 @@ export class VoiceCaptureComponent implements OnDestroy {
     const formData = new FormData();
     const file = files[0];
     formData.append("file", file);
-    this.textFromVoice = "***En cours de transcription... Cela prendra autant de secondes que dure l'enregistrement...***";
+    this.textFromVoice = "***En cours de transcription... Cela prendra quelques secondes...***";
     this.apiManager.transcript(file.name).subscribe((dataTranscripted: any)=>{
       console.log(dataTranscripted);
       let result = JSON.parse(dataTranscripted)
