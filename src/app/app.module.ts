@@ -10,18 +10,12 @@ import { SliderComponent } from './components/slides/slider/slider.component';
 import { PlanningComponent } from './components/planning/planning.component';
 
 
-import {HttpClientJsonpModule, HttpClientModule} from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 import { Routes, RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { VoiceCaptureComponent } from './components/voice-capture/voice-capture.component';
 import { VoiceCaptureService } from './services/voice-capture.service';
 import { CarouselComponent } from './components/slides/form/carousel/carousel.component';
-import {ReactiveFormsModule} from "@angular/forms";
-
-import { SchedulerModule } from '@progress/kendo-angular-scheduler';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {EditService} from './components/planning/edit.service';
-
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -50,17 +44,9 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes),
-    SchedulerModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    HttpClientJsonpModule
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [
-    VoiceCaptureService,
-    EditService
-  ],
+  providers: [VoiceCaptureService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

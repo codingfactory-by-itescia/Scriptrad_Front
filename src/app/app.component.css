@@ -1,5 +1,3 @@
 .background_project {
-    max-height: 812px;
-    height: 670px;
-    background-color: #272525;
+    min-height: 670px;
 }

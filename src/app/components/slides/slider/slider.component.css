@@ -3,10 +3,7 @@
     height: 100%;
     position: absolute;
     top: 0;
-    background: #272525;
-}
-h1{
-    color: white;
+    background: rebeccapurple;
 }
 .slider_view{
     position: relative;
@@ -16,7 +13,6 @@ h1{
     width: 55%;
     height: 60%;
     margin-top: 100px;
-    border: 3px solid white;
 }
 .img_selected{
     width: 100%;
@@ -39,7 +35,7 @@ h1{
 .carousel_container{
     border: 1px solid;
     height: 100px;
-    width: 90%;
+    width: 70%;
     overflow: hidden;
     position: relative;
     left: 50%;
@@ -53,6 +49,7 @@ h1{
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-snap-align: start;
     scroll-behavior: smooth;
     padding-left: 0;
 }
@@ -69,7 +66,6 @@ h1{
     align-items: center;
     cursor: pointer;
     pointer-events: visible;
-    border: 1px solid white;
 }
 .carousel_el >img {
     height: 100%;
@@ -77,7 +73,7 @@ h1{
 }
 
 .carousel_list::-webkit-scrollbar {
-    height: 8px;
+    height: 5px;
   }
 .carousel_list::-webkit-scrollbar-thumb {
     background: #666666;
